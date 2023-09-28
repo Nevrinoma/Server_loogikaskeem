@@ -1,8 +1,10 @@
-﻿namespace Server_loogikaskeem.Models
+﻿using System.ComponentModel;
+
+namespace Server_loogikaskeem.Models
 {
     public interface Iloogikaskeem
     {
-        bool kysi();
+        public bool kysi(bool a,bool b,string oper);
         
     }
 }
