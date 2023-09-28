@@ -7,5 +7,6 @@ namespace Server_loogikaskeem.Controllers
     [ApiController]
     public class ANDloogikaController : ControllerBase
     {
+
     }
 }
