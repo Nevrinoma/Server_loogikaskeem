@@ -7,5 +7,17 @@ namespace Server_loogikaskeem.Controllers
     [ApiController]
     public class ORloogikaController : ControllerBase
     {
+        public void or_operatsioon(bool bool_1,bool bool_2)
+        {
+            bool answer;
+            if (bool_1 == true || bool_2 == true)
+            {
+                answer = true;
+            }
+            else if (bool_1 == false && bool_2 == false)
+            {
+                answer = false;
+            }
+        }
     }
 }
