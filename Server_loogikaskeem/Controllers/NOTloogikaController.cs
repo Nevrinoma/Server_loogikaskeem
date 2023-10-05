@@ -7,20 +7,25 @@ namespace Server_loogikaskeem.Controllers
     [ApiController]
     public class NOTloogikaController : ControllerBase
     {
-        public void not_operatsioon(bool bool_1)
+        [HttpGet("not/{bool_1}")]
+        public bool not_operatsioon(bool bool_1)
         {
-            bool answer;
+            
 
             if (bool_1 == true)
             {
+                bool answer;
                 answer = false;
+                return answer;
             }
             else if (bool_1 == false)
             {
+                bool answer;
                 answer = true;
+                return answer;
             }
             
-
+            return false;
         }
     }
 }
