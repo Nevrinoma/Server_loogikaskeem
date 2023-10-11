@@ -1,9 +1,13 @@
+
 import React, { useState } from 'react';
+import Equation from './Equation'; 
+import EquationGenerator from './EquationGenerator'; 
 import './App.css';
 
 function App() {
   const [isTest, setTest] = useState(false);
   const [selectedValue, setSelectedValue] = useState(null);
+  const [equations, setEquations] = useState([]); 
 
   function handleFormSubmit(event) {
     event.preventDefault();
@@ -11,6 +15,10 @@ function App() {
     const selectedOption = formData.get('logmath');
     setSelectedValue(selectedOption);
     setTest(true);
+  }
+
+  function addEquation(newEquation) {
+    setEquations([...equations, newEquation]);
   }
 
   return (
@@ -41,6 +49,22 @@ function App() {
           )}
         </div>
       </form>
+      {isTest && (
+        <div>
+          <h2>TEST</h2>
+          {selectedValue !== null && (
+            <div>
+              <p>Вы выбрали: {selectedValue}</p>
+            </div>
+          )}
+          <div className="equations">
+            {equations.map((equation, index) => (
+              <Equation key={index} equation={equation} />
+            ))}
+          </div>
+          <EquationGenerator onGenerateEquation={addEquation} />
+        </div>
+      )}
     </div>
   );
 }

@@ -10,6 +10,7 @@ namespace Server_loogikaskeem.Controllers
         [HttpGet("and/{bool_1}/{bool_2}")]
         public bool and_operatsioon(bool bool_1, bool bool_2)
         {
+
             
             if (bool_1 == true && bool_2 == true)
             {
